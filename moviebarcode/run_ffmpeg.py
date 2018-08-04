@@ -22,7 +22,7 @@ def create_movie_frames(infile, scale, framerate, start=None, duration=None, end
     if end:
         ffmpeg_args += ['-to', end]
 
-    ffmpeg_args += ['-i', '../' + infile, '-r', framerate]
+    ffmpeg_args += ['-i', infile, '-r', framerate]
 
     ffmpeg_args += ['-vf', 'scale={}'.format(scale), '-f', 'image2', 'image-%09d.png']
 
